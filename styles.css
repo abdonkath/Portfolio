@@ -21,14 +21,13 @@ body {
 
 .nav-left h1 {
   margin: 0;
-  padding-left: 3.5rem;
   font-size: 3rem;
   font-family: "Indie Flower", cursive;
 }
 
 .nav-right {
   display: flex;
-  gap: 0.75rem;
+  gap: 3%;
 }
 
 .github-logo,
@@ -40,22 +39,29 @@ body {
 }
 
 .about {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;   /* keep items on row */
-  gap: clamp(2rem, 6vw, 6rem);      /* responsive gap */
-  padding: clamp(2rem, 5vw, 4rem);
-  max-width: 1100px;                /* nice readable line length */
-  margin: 0 auto;                   /* center the section */
+  justify-content: space-between;
+  /* keep items on row */
+  gap: clamp(2rem, 6vw, 6rem);
+  /* responsive gap */
+  padding: 2.5rem 4.5rem;
+  max-width: 1100px;
+  /* nice readable line length */
+  margin: 0 auto;
 }
 
 .profile-pic {
-  width: clamp(200px, 28vw, 600px); /* responsive size */
-  aspect-ratio: 1 / 1;              /* keep it a perfect circle */
+  width: 35%;
+  height: 35%;
+  aspect-ratio: 1 / 1;
+  /* keep it a perfect circle */
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #967bb6;
   margin-top: 15px;
+  margin-left: 2%;
+  flex-shrink: 0;
 }
 
 /* keep the image filling the circle */
@@ -65,28 +71,33 @@ body {
   object-fit: cover;
 }
 
-/* Full screen position (desktop) */
-@media (min-width: 1100px) {
-  .about {
-    justify-content: flex-start; /* content aligned left */
-    gap: 6rem;                   /* spacing between pic and text */
-    padding-left: 5rem;
-  }
-  .profile-pic {
-    transform: translateX(-18rem); /* shift to the left under your name */
-  }
+.about-text {
+  margin-left: 2%;
+  font-size: large;
 }
 
-/* Small screen position (mobile/tablet) */
-@media (max-width: 1299px) {
+.project-header {
+  background-color: #967bb6;
+  text-align: center;
+  border-color: #967bb6;
+  border-radius: 20px;
+  font-family: "Indie Flower", cursive;
+  color: white;
+}
+
+
+@media (max-width: 900px) {
   .about {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-    padding: 2rem;
+    display: inline-flex;
+    justify-content: flex-start;
+    /* content aligned left */
+    gap: 6rem;
+    /* spacing between pic and text */
+    padding-left: 5rem;
   }
+
   .profile-pic {
-    transform: translateX(0); /* reset to centered */
+    transform: translateX(0);
+    /* shift to the left under your name */
   }
 }
